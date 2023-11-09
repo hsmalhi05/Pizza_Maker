@@ -1,0 +1,7 @@
+﻿{
+  "ConnectionStrings": {
+    "2022ExamSQLServer": "Server=localhost;Database=2022Exam;  User Id=HARMAN\\DELL;Password=;Trusted_Connection=False; MultipleActiveResultSets=true",
+    "2022ExamSQLServerOther": "Server=localhost;Database=2022Exam;  User Id=PapaDario;Password=12345;Trusted_Connection=False; MultipleActiveResultSets=true"
+  }
+}
+

@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="FinalExamHarmanpreetSingh.CustomerDashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FinalExamHarmanpreetSingh"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid  Background="Bisque">
+        <TextBlock HorizontalAlignment="Center" Margin="0,37,0,0" TextWrapping="Wrap" Text="Customer Dashboard - Make Order" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Width="1500" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,111,0,0" TextWrapping="Wrap" Text="All Products" VerticalAlignment="Top" FontSize="25" FontWeight="SemiBold"/>
+        <GridView x:Name="productGrid"
+            SelectionMode="Single" IsItemClickEnabled="True" MinWidth="300"
+            Margin="40,177,1008,50" 
+            Foreground="Black" Background="White" SelectionChanged="productGrid_SelectionChanged" >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="{Binding ProductId}" FontWeight="Bold" 
+                            Style="{StaticResource BaseTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap" 
+                            Style="{StaticResource BodyTextBlockStyle}" />
+                        <TextBlock Text="{Binding Category}" TextWrapping="Wrap" 
+                            Style="{StaticResource BodyTextBlockStyle}" />
+                        <TextBlock Text="{Binding Price}" TextWrapping="Wrap" 
+                            Style="{StaticResource BodyTextBlockStyle}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <TextBlock HorizontalAlignment="Left" Margin="1074,202,0,0" TextWrapping="Wrap" Text="Subtotal:" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtSubtotal" HorizontalAlignment="Left" Margin="1205,200,0,0" TextWrapping="Wrap" IsReadOnly="True"  VerticalAlignment="Top" Width="265" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1074,255,0,0" TextWrapping="Wrap" Text="HST (13%):" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtTax" HorizontalAlignment="Left" Margin="1205,253,0,0" TextWrapping="Wrap" IsReadOnly="True"  VerticalAlignment="Top" Width="265" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1074,347,0,0" TextWrapping="Wrap" Text="Total:" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Margin="1205,345,0,0" TextWrapping="Wrap" IsReadOnly="True"  VerticalAlignment="Top" Width="265" Height="32"/>
+        <Button x:Name="btnOrder" Content="Place Order" Margin="1206,398,0,0" Background="CadetBlue" Foreground="White" FontSize="21" VerticalAlignment="Top" Height="47" Width="264" Click="btnOrder_Click" />
+        <Button x:Name="btnLogOut" Content="Log out" Margin="1206,467,0,0" Background="Red" Foreground="White" FontSize="21" Height="47" Width="264" Click="btnLogOut_Click" VerticalAlignment="Top"  />
+        <TextBlock HorizontalAlignment="Left" Margin="546,118,0,0" TextWrapping="Wrap" Text="Current Order" VerticalAlignment="Top" FontSize="25" FontWeight="SemiBold" RenderTransformOrigin="0.522,-0.119"/>
+        <TextBlock x:Name="txtCustomer" HorizontalAlignment="Left" Margin="1074,123,0,0" TextWrapping="Wrap" Text="Customer: " VerticalAlignment="Top" FontSize="25" FontWeight="SemiBold"/>
+        <GridView x:Name="orderGrid"
+            SelectionMode="Single" IsItemClickEnabled="True" MinWidth="300"
+            Margin="546,177,502,50" 
+            Foreground="Black" Background="White" SelectionChanged="productGrid_SelectionChanged" >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="{Binding ProductName}" FontWeight="Bold" 
+                            Style="{StaticResource BaseTextBlockStyle}"/>
+                        <TextBlock Text="{Binding ProductCategory}" TextWrapping="Wrap" 
+                            Style="{StaticResource BodyTextBlockStyle}" />
+                        <TextBlock Text="{Binding ProductPrice}" TextWrapping="Wrap" 
+                            Style="{StaticResource BodyTextBlockStyle}" />
+                        <TextBlock Text="{Binding Quantity}" TextWrapping="Wrap" 
+                            Style="{StaticResource BodyTextBlockStyle}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <TextBlock HorizontalAlignment="Left" Margin="1074,300,0,0" TextWrapping="Wrap" Text="Discount:" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtDiscount" HorizontalAlignment="Left" Margin="1205,298,0,0" TextWrapping="Wrap" IsReadOnly="True"  VerticalAlignment="Top" Width="265" Height="32"/>
+
+
+    </Grid>
+</Page>

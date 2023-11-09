@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="FinalExamHarmanpreetSingh.ProductDashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FinalExamHarmanpreetSingh"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid  Background="AliceBlue">
+        <TextBlock HorizontalAlignment="Center" Margin="0,37,0,0" TextWrapping="Wrap" Text="Admin Dashboard - Update products" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Width="1500" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,111,0,0" TextWrapping="Wrap" Text="All Products" VerticalAlignment="Top" FontSize="25" FontWeight="SemiBold"/>
+        <GridView x:Name="productGrid"
+                  SelectionMode="Single" IsItemClickEnabled="True"
+                  Width="710" MinWidth="400"
+                  Margin="40,177,750,50" 
+                  Foreground="Black" Background="White" 
+                  SelectionChanged="productGrid_SelectionChanged">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="{Binding ProductId}" FontWeight="Bold" 
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap" 
+                                   Style="{StaticResource BodyTextBlockStyle}" />
+                        <TextBlock Text="{Binding Category}" TextWrapping="Wrap" 
+                                   Style="{StaticResource BodyTextBlockStyle}" />
+                        <TextBlock Text="{Binding Price}" TextWrapping="Wrap" 
+                                   Style="{StaticResource BodyTextBlockStyle}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <TextBlock HorizontalAlignment="Left" Margin="794,111,0,0" TextWrapping="Wrap" Text="Product CRUD" VerticalAlignment="Top" FontSize="25" FontWeight="SemiBold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="794,203,0,0" TextWrapping="Wrap" Text="Product Name:" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="794,265,0,0" TextWrapping="Wrap" Text="Product Category:" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="794,326,0,0" TextWrapping="Wrap" Text="Product Price:" VerticalAlignment="Top" FontSize="21" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtProductName" HorizontalAlignment="Left" Margin="1015,199,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="421" Height="32"/>
+        <TextBox x:Name="txtProductCategory" HorizontalAlignment="Left" Margin="1015,265,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="421" Height="32"/>
+        <TextBox x:Name="txtProductPrice" HorizontalAlignment="Left" Margin="1015,327,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="421" Height="32"/>
+        <Button x:Name="btnAdd" Content="Add Product" Margin="1015,384,0,0" Background="CadetBlue" Foreground="White" FontSize="21" VerticalAlignment="Top" Height="47" Width="420" Click="btnAdd_Click"/>
+        <Button x:Name="btnUpdate" Content="Update Product" Margin="1015,453,0,0" Background="CadetBlue" Foreground="White" FontSize="21" VerticalAlignment="Top" Height="47" Width="420" Click="btnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Delete Product" Margin="1015,532,0,0" Background="Red" Foreground="White" FontSize="21" VerticalAlignment="Top" Height="47" Width="420" Click="btnDelete_Click"/>
+        <Button x:Name="btnLogOut" Content="Log out" Margin="1015,651,0,0" Background="Red" Foreground="White" FontSize="21" VerticalAlignment="Top" Height="47" Width="420" Click="btnLogOut_Click" />
+
+
+    </Grid>
+</Page>
